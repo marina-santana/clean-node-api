@@ -4,7 +4,11 @@
   "description": "Repositório do curso de NodeJs, TDD e Clean Architecture.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watchAll",
+    "test:staged": "jest"
+  },
+  "standard":{
+    "env": ["jest"]
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +17,9 @@
     "jest": "^25.1.0",
     "lint-staged": "^10.0.8",
     "standard": "^14.3.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.4"
   }
 }
