@@ -12,15 +12,11 @@ describe('SignUp Routes', () => {
   })
 
   beforeEach(async () => {
-    const accountCollection = await MongoHelper.getCollection('account')
+    const accountCollection = await MongoHelper.getCollection('accounts')
     await accountCollection.deleteMany({})
   })
 
   test('Should return an account on success', async () => {
-    app.post('/test_body_parser', (req, res) => {
-      res.send(req.body)
-    })
-
     await request(app)
       .post('/api/signup')
       .send({
