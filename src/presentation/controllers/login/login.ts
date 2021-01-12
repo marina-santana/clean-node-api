@@ -1,4 +1,4 @@
-import { MissingParamError } from '../../errors'
+import { InvalidParamError, MissingParamError } from '../../errors'
 import { badRequest } from '../../helpers/http-helper'
 import { EmailValidator, HttpRequest } from '../../protocols'
 
@@ -20,6 +20,9 @@ export class LoginController {
       return await new Promise(resolve => resolve(badRequest(new MissingParamError('password'))))
     }
 
-    this.emailValidator.isValid(email)
+    const isValid = this.emailValidator.isValid(email)
+    if (!isValid) {
+      return new Promise(resolve => resolve(badRequest(new InvalidParamError('email'))))
+    }
   }
 }
