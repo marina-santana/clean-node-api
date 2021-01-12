@@ -4,6 +4,14 @@ import { HttpRequest } from '../../protocols'
 
 export class LoginController {
   async handle (httpRequest: HttpRequest): Promise<HttpRequest> {
-    return await new Promise(resolve => resolve(badRequest(new MissingParamError('email'))))
+    const { email, password } = httpRequest.body
+
+    if (!email) {
+      return await new Promise(resolve => resolve(badRequest(new MissingParamError('email'))))
+    }
+
+    if (!password) {
+      return await new Promise(resolve => resolve(badRequest(new MissingParamError('password'))))
+    }
   }
 }
