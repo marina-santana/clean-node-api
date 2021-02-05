@@ -2331,7 +2331,7 @@
   "resolved" "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz"
   "version" "3.1.3"
 
-"fast-glob@^3.1.1", "fast-glob@^3.2.4":
+"fast-glob@^3.1.1":
   "integrity" "sha512-kr/Oo6PX51265qeuCYsyGypiO5uJFgBS0jksyG7FUeCyQzNwYnzrNIMR1NXfkZXsMYXYLRAHgISHBz8gQcxKHQ=="
   "resolved" "https://registry.npmjs.org/fast-glob/-/fast-glob-3.2.4.tgz"
   "version" "3.2.4"
